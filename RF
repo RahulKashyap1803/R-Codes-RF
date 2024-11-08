@@ -1,0 +1,13 @@
+library("randomForest")
+library("caret")
+
+attach(excel file with time series)
+
+my_data <-excel file [n:m]
+
+my_rf <- randomForest(FPAR ~ ., data=my_data)
+varImpPlot(my_rf)
+varImp(my_rf)
+my_rf
+imp <- unlist(varImp(my_rf))
+scales::percent(imp / sum(imp)) 
